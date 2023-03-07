@@ -31,7 +31,7 @@ module Btn
       end
       opts.on("-m", "--ms-teams-webhook WEBHOOK_URL", "Webhook URL of the MS TEAMS channel to post to") do |option|
         options[:webhook_url] = option.downcase
-        abort("You need to specify a valid MS Teams webhook url") if options[:webhook_ulr].nil?
+        abort("You need to specify a valid MS Teams webhook url\n\n#{parser.help}") if options[:webhook_ulr].nil?
       end
       opts.on("-h", "--help", "Display options") do
         puts opts
