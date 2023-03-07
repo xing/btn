@@ -18,7 +18,7 @@ module Btn
   # rubocop:disable Metrics/MethodLength
   def self.send_notification
     options = {
-      title: ENV.fetch("BITRISEIO_PIPELINE_TITLE", "BITRISE_TRIGGERED_WORKFLOW_TITLE"),
+      title: ENV["BITRISEIO_PIPELINE_TITLE"] || ENV.fetch("BITRISE_TRIGGERED_WORKFLOW_TITLE"),
       status: ENV.fetch("BITRISE_BUILD_STATUS"),
       build_url: ENV.fetch("BITRISE_BUILD_URL")
     }
